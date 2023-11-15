@@ -26,6 +26,17 @@ metadata:
 spec:
   memberOf: [devops]
 ---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: haongthithu
+  profile:
+    displayName: Hoang Thi Thu
+    email: haongthithu@fpt.com
+spec:
+  memberOf: [devops]
+---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
 kind: Group
