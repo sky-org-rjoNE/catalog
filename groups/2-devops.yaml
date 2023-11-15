@@ -30,10 +30,10 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: haongthithu
+  name: hoangthithu
   profile:
     displayName: Hoang Thi Thu
-    email: haongthithu@fpt.com
+    email: hoangthithu@fpt.com
 spec:
   memberOf: [devops]
 ---
