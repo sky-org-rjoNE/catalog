@@ -5,4 +5,4 @@ metadata:
   description: A collection of all Backstage example entities, except users, groups, and templates
 spec:
   targets:
-    - ./Groups/1-all.yaml
+    - ./g/1-all.yaml
