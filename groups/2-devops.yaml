@@ -6,6 +6,9 @@ metadata:
   name: leduy
 spec:
   memberOf: [devops]
+  profile:
+    displayName: Le Duy
+    email: duylc3@fpt.com    
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
 apiVersion: backstage.io/v1alpha1
