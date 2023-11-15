@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: catalog
+  annotations:
+    github.com/project-slug: sky-org-rjoNE/catalog
+spec:
+  type: other
+  lifecycle: unknown
+  owner: devops

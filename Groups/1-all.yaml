@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: all-groups
+  description: All groups in here 
+spec:
+  targets:
+    - ./2-devops.yaml
+    - ./3-developer.yaml
+    - ./4-boss.yaml
