@@ -1,3 +1,5 @@
+# Notice the v1beta3 version
+---
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
@@ -6,12 +8,12 @@ metadata:
   title: Test Action template
   description: scaffolder v1beta3 template demo
 spec:
-  owner: devops
+  owner: backstage/techdocs-core
   type: service
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill in some steps
+    - title: Fill in some stepss
       required:
         - name
       properties:
@@ -22,6 +24,14 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: Group
     - title: Choose a location
       required:
         - repoUrl
@@ -36,20 +46,21 @@ spec:
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
-    # - id: fetch-base
-    #   name: Fetch Base
-    #   action: fetch:template
-    #   input:
-    #     url: ./template
-    #     values:
-    #       name: ${{ parameters.name }}
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./template
+        values:
+          name: ${{ parameters.name }}
+          owner: ${{ parameters.owner }}
 
-    # - id: fetch-docs
-    #   name: Fetch Docs
-    #   action: fetch:plain
-    #   input:
-    #     targetPath: ./community
-    #     url: https://github.com/backstage/community/tree/main/backstage-community-sessions
+    - id: fetch-docs
+      name: Fetch Docs
+      action: fetch:plain
+      input:
+        targetPath: ./community
+        url: https://github.com/backstage/community/tree/main/backstage-community-sessions
 
     - id: publish
       name: Publish
@@ -59,9 +70,18 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
 
-    # - id: register
-    #   name: Register
-    #   action: catalog:register
-    #   input:
-    #     repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-    #     catalogInfoPath: '/catalog-info.yaml'
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  # some outputs which are saved along with the job for use in the frontend
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
