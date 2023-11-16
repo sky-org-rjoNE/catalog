@@ -14,6 +14,17 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
+  name: leduy2
+spec:
+  memberOf: [devops]
+  profile:
+    displayName: Le Duy hello
+    email: duylc4@fpt.com    
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
   name: namthia
 spec:
   memberOf: [devops]
