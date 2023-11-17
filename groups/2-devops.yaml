@@ -36,17 +36,17 @@ metadata:
   name: nguyenthilan
 spec:
   memberOf: [devops]
----
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: hoangthithu  
-spec:
-  memberOf: [devops]
-  profile:
-    displayName: Hoang Thi Thu
-    email: hoangthithu@fpt.com
+# ---
+# # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-user
+# apiVersion: backstage.io/v1alpha1
+# kind: User
+# metadata:
+#   name: hoangthithu  
+# spec:
+#   memberOf: [devops]
+#   profile:
+#     displayName: Hoang Thi Thu
+#     email: hoangthithu@fpt.com
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1
