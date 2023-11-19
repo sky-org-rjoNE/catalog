@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: All templates
+  description: all templates
+spec:
+  targets:
+    - ./nodejs/template.yaml
+    - ./flask/template.yaml
+    
