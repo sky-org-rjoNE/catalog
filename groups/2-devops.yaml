@@ -45,7 +45,7 @@ metadata:
 spec:
   memberOf: [devops]
   profile:
-    displayName: Hoang Thi Thubalblalbalskfjls
+    displayName: Hoang Thi Thu
     email: hoangthithu@fpt.com
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
