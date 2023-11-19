@@ -6,3 +6,4 @@ metadata:
 spec:
   targets:
     - ./templates/nodejs/template.yaml
+    - ./templates/flask/template.yaml
