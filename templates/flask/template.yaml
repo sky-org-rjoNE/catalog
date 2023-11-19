@@ -3,7 +3,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
 kind: Template
 metadata:
-  name: Hello flask app
+  name: Flask
   title: Hello flask app
   description: Hello flask app template
 spec:

@@ -8,3 +8,4 @@ spec:
     - ./2-devops.yaml
     - ./3-developer.yaml
     - ./4-boss.yaml
+    - ./5-admin.yaml
