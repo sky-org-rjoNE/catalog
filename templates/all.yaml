@@ -7,5 +7,4 @@ spec:
   targets:
     - ./nodejs/template.yaml
     - ./flask/template.yaml
-    - ./flask2/template.yaml
     
