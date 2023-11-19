@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: all catalog location
+  name: template
   description: A collection of all Backstage example entities, except users, groups, and templates
 spec:
   targets:
