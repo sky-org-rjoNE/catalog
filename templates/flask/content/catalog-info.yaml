@@ -2,6 +2,9 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: ${{ values.name | dump }}
+  github.com/project-slug: sky-org-rjoNE/${{ values.name | dump }}
+  # backstage.io/techdocs-ref: url:https://github.com/sky-org-rjoNE/test-cicd-a
+
 spec:
   type: service
   owner: user:devops
