@@ -62,20 +62,19 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ "github.com?owner=" + parameters.orgnizationName + "&repo=" + parameters.repositoryName }}
 
-    # # The final step is to register our new component in the catalog.
-    # - id: register
-    #   name: Register
-    #   action: catalog:register
-    #   input:
-    #     repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-    #     catalogInfoPath: '/catalog-info.yaml'        
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'        
 
     - id: log-message
       name: Log Message
       action: debug:log
       input:
         message: ${{ "github.com?owner=" + parameters.orgnizationName + "&repo=" + parameters.repositoryName }}
-  # Outputs are displayed to the user after a successful execution of the template.
+
   output:
     links:
       - title: Repository
