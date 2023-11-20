@@ -23,18 +23,6 @@ spec:
           title: Name
           type: string
           description: Unique name of the component
-        organization:
-          title: Organization
-          type: string
-          description: name of the organization
-        owner:
-          title: Owner
-          type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - Group
     - title: Choose a location
       required:
         - repoUrl
@@ -58,25 +46,30 @@ spec:
         url: ./content
         values:
           name: ${{ parameters.name }}
-
-    # This step publishes the contents of the working directory to GitHub.
-    - id: publish
-      name: Publish
-      action: publish:github
+    - id: log-message
+      name: Log Message
+      action: debug:log
       input:
-        allowedHosts: ['github.com']
-        description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
+        message: ${{ parameters.repoUrl }}
 
-    # The final step is to register our new component in the catalog.
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
-        organization: ${{ parameters.organization }}
-        owner: ${{ parameters.owner }}
+    # # This step publishes the contents of the working directory to GitHub.
+    # - id: publish
+    #   name: Publish
+    #   action: publish:github
+    #   input:
+    #     allowedHosts: ['github.com']
+    #     description: This is ${{ parameters.name }}
+    #     repoUrl: ${{ parameters.repoUrl }}
+
+    # # The final step is to register our new component in the catalog.
+    # - id: register
+    #   name: Register
+    #   action: catalog:register
+    #   input:
+    #     repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+    #     catalogInfoPath: '/catalog-info.yaml'
+    #     organization: ${{ parameters.organization }}
+    #     owner: ${{ parameters.owner }}
         
 
   # Outputs are displayed to the user after a successful execution of the template.
