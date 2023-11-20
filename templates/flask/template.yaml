@@ -32,6 +32,13 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
+    - title: Choose a location
+      required:
+        - test_id
+      properties:
+        test_id:
+          title: Repository Location
+          type: string
 
   # These steps are executed in the scaffolder backend, using data that we gathered
   # via the parameters above.
@@ -48,7 +55,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: ${{ parameters.repoUrl }}
+        message: ${{ parameters.repoUrl + "," parameters.test_id}}
 
     # # This step publishes the contents of the working directory to GitHub.
     # - id: publish
