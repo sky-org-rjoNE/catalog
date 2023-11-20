@@ -44,7 +44,7 @@ spec:
           apiVersion: backstage.io/v1alpha1
           kind: Component
           metadata:
-            name: ${{ values.name | dump }}
+            name: ${{ parameters.repositoryName }}
             description: Description of flask
             annotations:
               github.com/project-slug: ${{ parameters.orgnizationName + "/" + parameters.repositoryName }}
