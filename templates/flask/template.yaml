@@ -75,9 +75,9 @@ spec:
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
-      values:
         organization: ${{ parameters.organization }}
         owner: ${{ parameters.owner }}
+        
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
