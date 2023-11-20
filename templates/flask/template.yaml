@@ -16,11 +16,19 @@ spec:
     - title: Fill in some steps
       required:
         - name
+        - organization
       properties:
         name:
           title: Name
           type: string
           description: Unique name of the component
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+        organization:
+          title: Organization
+          type: string
+          description: name of the organization
           ui:autofocus: true
           ui:options:
             rows: 5
