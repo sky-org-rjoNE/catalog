@@ -55,7 +55,7 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: ${{ parameters.repoUrl parameters.test_id }}
+        message: ${{ parameters.test_id }}
 
     # # This step publishes the contents of the working directory to GitHub.
     # - id: publish
