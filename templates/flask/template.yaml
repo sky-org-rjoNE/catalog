@@ -16,8 +16,6 @@ spec:
     - title: Fill in some steps
       required:
         - name
-        - organization
-        - owner
       properties:
         name:
           title: Name
