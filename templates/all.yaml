@@ -7,4 +7,6 @@ spec:
   targets:
     - ./nodejs/template.yaml
     - ./flask/template.yaml
+    - ./react-app/template.yaml
+    - ./clean-architecture-app/template.yaml
     
