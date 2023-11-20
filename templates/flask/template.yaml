@@ -26,6 +26,8 @@ spec:
           title: Orgnization Name
           type: string
           description: Name of Orgnization
+          enum:
+          - sky-org-rjoNE
     # - title: Choose a location
     #   required:
     #     - repoUrl
