@@ -10,8 +10,6 @@ spec:
   owner: devops
   type: service
 
-  # These parameters are used to generate the input form in the frontend, and are
-  # used to gather input data for the execution of the template.
   parameters:
     - title: Fill in some steps
       required:
@@ -28,24 +26,8 @@ spec:
           description: Name of Orgnization
           enum:
           - sky-org-rjoNE
-    # - title: Choose a location
-    #   required:
-    #     - repoUrl
-    #   properties:
-    #     repoUrl:
-    #       title: Repository Location
-    #       type: string
-    #       ui:field: RepoUrlPicker
-    #       ui:options:
-    #         allowedHosts:
-    #           - github.com
 
-    
-
-  # These steps are executed in the scaffolder backend, using data that we gathered
-  # via the parameters above.
   steps:
-    # Each step executes an action, in this case one templates files into the working directory.
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -65,7 +47,7 @@ spec:
             name: ${{ values.name | dump }}
             description: Description of flask
             annotations:
-              github.com/project-slug: ${{ values.organization + "/" + values.name }}
+              github.com/project-slug: ${{ values.organizationName + "/" + values.repositoryName }}
               backstage.io/techdocs-ref: dir:.
           spec:
             type: service
@@ -86,8 +68,7 @@ spec:
     #   action: catalog:register
     #   input:
     #     repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-    #     catalogInfoPath: '/catalog-info.yaml'
-        
+    #     catalogInfoPath: '/catalog-info.yaml'        
 
     - id: log-message
       name: Log Message
