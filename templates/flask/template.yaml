@@ -4,7 +4,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: Flask
-  title: Hello flask app
+  title: Flask
   description: Hello flask app template
 spec:
   owner: devops
