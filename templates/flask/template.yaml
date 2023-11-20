@@ -21,7 +21,7 @@ spec:
           title: Name
           type: string
           description: Unique name of the component
-          
+
     - title: Choose a location
       required:
         - repoUrl
@@ -76,6 +76,12 @@ spec:
       action: debug:log
       input:
         message: ${{ parameters | dump }}
+    - id: append-file
+      name: Overwrite file content
+      action: roadiehq:utils:fs:write
+      input:
+        path: ${{ parameters.path }}
+        content: ${{ parameters.content }}
 
     # This step publishes the contents of the working directory to GitHub.
     - id: publish
