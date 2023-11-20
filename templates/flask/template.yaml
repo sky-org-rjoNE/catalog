@@ -26,6 +26,7 @@ spec:
           description: Name of Orgnization
           enum:
           - sky-org-rjoNE
+          - sky-org-dev
 
   steps:
     - id: fetch-base
