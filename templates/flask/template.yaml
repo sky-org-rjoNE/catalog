@@ -17,21 +17,24 @@ spec:
       required:
         - name
         - organization
+        - owner
       properties:
         name:
           title: Name
           type: string
           description: Unique name of the component
-          ui:autofocus: true
-          ui:options:
-            rows: 5
         organization:
           title: Organization
           type: string
           description: name of the organization
-          ui:autofocus: true
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
           ui:options:
-            rows: 5
+            allowedKinds:
+              - Group
     - title: Choose a location
       required:
         - repoUrl
@@ -72,6 +75,9 @@ spec:
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
+      values:
+        organization: ${{ parameters.organization }}
+        owner: ${{ parameters.owner }}
 
   # Outputs are displayed to the user after a successful execution of the template.
   output:
