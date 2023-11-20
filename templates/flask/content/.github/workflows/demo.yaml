@@ -1,0 +1,14 @@
+name: Deploy flask app
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Test job
+      run: cat Dockerfile
