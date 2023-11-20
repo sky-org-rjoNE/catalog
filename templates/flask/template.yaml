@@ -55,20 +55,20 @@ spec:
             owner: developers
             lifecycle: production
 
-    # - id: publish
-    #   name: Publish
-    #   action: publish:github
-    #   input:
-    #     allowedHosts: ['github.com']
-    #     description: This is ${{ parameters.name }}
-    #     repoUrl: ${{ "github.com?owner=" + parameters.orgnizationName + "&repo=" + parameters.repositoryName }}
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: This is ${{ parameters.name }}
+        repoUrl: ${{ "github.com?owner=" + parameters.orgnizationName + "&repo=" + parameters.repositoryName }}
 
-    # - id: register
-    #   name: Register
-    #   action: catalog:register
-    #   input:
-    #     repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-    #     catalogInfoPath: '/catalog-info.yaml'
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
 
     - id: log-message
       name: Log Message
