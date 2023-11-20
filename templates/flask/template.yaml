@@ -21,6 +21,7 @@ spec:
           title: Name
           type: string
           description: Unique name of the component
+          
     - title: Choose a location
       required:
         - repoUrl
@@ -32,13 +33,7 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-    - title: Choose a location
-      required:
-        - test_id
-      properties:
-        test_id:
-          title: Repository Location
-          type: string
+
     - title: Append content
       properties:
         path:
