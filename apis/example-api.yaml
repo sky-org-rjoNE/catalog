@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: petstore
+  name: flask-frontend
   description: The petstore API
   tags:
     - store
@@ -9,7 +9,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
-  owner: team-c
+  owner: developers
   definition: |
     openapi: "3.0.0"
     info:
