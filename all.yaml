@@ -7,5 +7,5 @@ spec:
   targets:
     - ./templates/all.yaml
     - ./groups/1-all.yaml
-    - ./apis/example-api.yaml
+    - ./apis/*.yaml
     
