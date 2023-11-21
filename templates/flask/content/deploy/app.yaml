@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: APP_NAME
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: APP_NAME
+  template:
+    metadata:
+      labels:
+        app: APP_NAME
+    spec:
+      containers:
+      - image: asia.gcr.io/all-now-tms-staging/base/accounttest:0.0.1
+        imagePullPolicy: Always
+        name: 
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "50Mi"
+          limits:
+            cpu: "100m"
+            memory: "100Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: APP_NAME
+  namespace: default
+  labels:
+    app: APP_NAME
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 5000
+  selector:
+    app: APP_NAME
+  type: ClusterIP
