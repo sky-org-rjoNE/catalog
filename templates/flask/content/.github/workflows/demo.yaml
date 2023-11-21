@@ -17,4 +17,5 @@ jobs:
       run: echo "Autheticationg to GKE"
     
     - name: Deploy
-      run: Deploying
+      run: echo "Deploying"
+
