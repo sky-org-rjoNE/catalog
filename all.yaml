@@ -7,5 +7,6 @@ spec:
   targets:
     - ./templates/all.yaml
     - ./groups/1-all.yaml
-    - ./apis/*.yaml
+    - ./apis/example-api.yaml
+    - ./apis/petstore-api.yaml
     
