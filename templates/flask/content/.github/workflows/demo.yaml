@@ -15,3 +15,6 @@ jobs:
       
     - name: gke authenticate
       run: echo "Autheticationg to GKE"
+    
+    - name: Deploy
+      run: Deploying
