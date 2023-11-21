@@ -2,6 +2,7 @@ site_name: Flask
 site_description: Flask
 
 nav:
+  - Introduction: index.md
   - Installation: install.md
 
 plugins:
