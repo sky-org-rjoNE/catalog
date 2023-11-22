@@ -5,7 +5,7 @@ kind: Template
 metadata:
   name: Flask
   title: Flask
-  description: Hello flask app template
+  description: Hello flask app template version 2
 spec:
   owner: devops
   type: service
